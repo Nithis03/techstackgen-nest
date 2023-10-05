@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/camped/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/camped",
+  "projects": {
+"auth": {
+"type": "library",
+"root": "libs/auth",
+"entryFile": "index",
+"sourceRoot": "libs/auth/src",
+"compilerOptions": {
+"tsConfigPath": "libs/auth/tsconfig.lib.json"
+}
+},
+    "techstackgen-nest": {
+      "type": "application",
+      "root": "apps/camped",
+      "entryFile": "main",
+      "sourceRoot": "apps/camped/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/camped/tsconfig.app.json"
+      }
+    }
+  }
+}
